@@ -9,4 +9,21 @@ class Item extends Model
 {
     /** @use HasFactory<\Database\Factories\ItemFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'sku',
+        'price',
+        'status',
+    ];
+
+    public function inventory()
+    {
+        return $this->hasOne(Inventory::class);
+    }
+
+    public function saleItems()
+    {
+        return $this->hasMany(SalesItem::class);
+    }
 }
