@@ -22,6 +22,27 @@
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
+                <flux:sidebar.group :heading="__('Management')" class="grid">
+                    <flux:sidebar.item icon="home" :href="route('customers.index')" :current="request()->routeIs('customers.index')" wire:navigate>
+                        {{ __('Manage Customers') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="home" :href="route('payment.method.index')" :current="request()->routeIs('payment.method.index')" wire:navigate>
+                        {{ __('Manage Payment Methods') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
+                <flux:sidebar.group :heading="__('Inventory Management')" class="grid">
+                    <flux:sidebar.item icon="home" :href="route('items.index')" :current="request()->routeIs('items.index')" wire:navigate>
+                        {{ __('Items') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="home" :href="route('inventories.index')" :current="request()->routeIs('inventories.index')" wire:navigate>
+                        {{ __('Manage Inventories') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
+                <flux:sidebar.group :heading="__('Sales')" class="grid">
+                    <flux:sidebar.item icon="home" :href="route('sales.index')" :current="request()->routeIs('sales.index')" wire:navigate>
+                        {{ __('Sales') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
             </flux:sidebar.nav>
 
             <flux:spacer />
